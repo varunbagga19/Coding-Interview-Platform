@@ -1,0 +1,1 @@
+ npm install & npm start in BOTH client & CODING-INTERVIEW-PLATFORM

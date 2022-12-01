@@ -1,0 +1,42 @@
+import './App.css';
+import {useState,useEffect} from "react";
+import io from "socket.io-client";
+const socket=io.connect("http://localhost:5000");
+
+
+
+function App() {
+  const [message,setmessage]=useState('');
+  function send(event){
+    event.preventDefault();
+     var e=event.target.value;
+    socket.emit("send",e);
+  }
+    useEffect(()=>{
+      socket.on("recieve",(data) =>
+      {
+          setmessage(data);
+      })
+    })
+
+  return (
+    <div className="App">
+      <header className="App-header">
+         <h1>
+          Chaddy
+          </h1>
+ 
+      <p>{message}</p>
+          <form>
+              <input type="text" name="chat"
+              placeholder="Ccode here"
+             onChange={send}
+             value={message || ''}
+             />
+          </form>
+      </header>
+    </div>
+  );
+}
+
+export default App;
