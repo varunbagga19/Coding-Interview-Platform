@@ -4,7 +4,7 @@ Became tired of companies still using zoom or google meet to take coding intervi
 
 [Live Application](https://bePratham.github.io/Coding-Interview-Platform/)
 
-![Preview](Preview.png)
+![Preview](preview.png)
 
 ## **Backend Dependencies**
 
