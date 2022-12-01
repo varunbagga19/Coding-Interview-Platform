@@ -34,7 +34,6 @@ io.on("connection", (socket) => {
 //message exchange
 
 	socket.on("send_message",(data)=>{
-		console.log(data);
 		io.emit("receive",data);
 		
 	})
