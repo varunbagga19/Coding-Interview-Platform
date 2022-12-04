@@ -2,7 +2,6 @@ import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import Notifications from './components/Notification/Notifications';
 import Options from './components/Options/Options';
 import Compiler from './components/Compiler/Compiler';
-
 import './App.css'
 
 function App() {
@@ -14,9 +13,9 @@ function App() {
           <Notifications />
         </Options>
       </div>
-      <div className='right'>
+      <div className='right'>      
         <Compiler />
-      </div>
+       </div>
     </div>
   );
 }

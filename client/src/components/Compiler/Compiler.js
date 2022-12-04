@@ -19,7 +19,6 @@ export default class Compiler extends Component {
   componentDidMount(){
     this.socket.on("receive",(data)=>{
         this.setState({input: data});
-        console.log(data);
     })
   }
 
