@@ -13,7 +13,7 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
-	res.send('Running');
+	res.send('Running  BC!!!');
 });
 
 io.on("connection", (socket) => {
@@ -37,6 +37,10 @@ io.on("connection", (socket) => {
 		io.emit("receive",data);
 		
 	})
+	socket.on("question",(data)=> {
+		io.emit("questionRe",data);
+		console.log(data);
+	});
 });
 
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

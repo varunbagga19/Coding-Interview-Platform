@@ -19,7 +19,6 @@ export default class Compiler extends Component {
   componentDidMount(){
     this.socket.on("receive",(data)=>{
         this.setState({input: data});
-        console.log(data);
     })
   }
 
@@ -121,6 +120,7 @@ export default class Compiler extends Component {
               required
               name="solution"
               id="source"
+              placeholder="Code here"
               onChange={this.input}
               className=" source"
               value={this.state.input}
