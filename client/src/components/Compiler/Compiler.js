@@ -120,6 +120,7 @@ export default class Compiler extends Component {
               required
               name="solution"
               id="source"
+              placeholder="Code here"
               onChange={this.input}
               className=" source"
               value={this.state.input}

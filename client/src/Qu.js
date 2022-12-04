@@ -24,7 +24,7 @@ function Qu() {
          <h1>  Questions   </h1>
               <form>
               <input type="text" name="chat"
-              placeholder="Code here"
+              placeholder="Questions will be shown here...."
              onChange={send}
              value={message || ''}
              />
