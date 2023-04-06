@@ -7,7 +7,9 @@ import './index.css'
 
 ReactDOM.render(
   <ContextProvider>
+    <Login/>
     <App />
+
   </ContextProvider>,
   document.getElementById('root'),
 );
