@@ -33,13 +33,14 @@ io.on("connection", (socket) => {
  
 //message exchange
 
+	socket.on("question",(data)=> {
+		console.log(data);
+		io.emit("questionRe",data);
+		
+	});
 	socket.on("send_message",(data)=>{
 		io.emit("receive",data);
 		
-	})
-	socket.on("question",(data)=> {
-		io.emit("questionRe",data);
-		console.log(data);
 	});
 });
 

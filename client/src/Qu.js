@@ -1,7 +1,7 @@
 import {useState,useEffect} from "react";
 import io from "socket.io-client";
 const socket=io.connect("http://localhost:5000");
-
+// const socket = io('https://plasma-interview.onrender.com');
 
 
 function Qu() {
@@ -15,8 +15,8 @@ function Qu() {
       socket.on("questionRe",(data) =>
       {
           setmessage(data);
-      })
-    })
+      });
+    },[]);
 
   return (
     <div className="App">
@@ -25,8 +25,8 @@ function Qu() {
               <form>
               <input type="text" name="chat"
               placeholder="Questions will be shown here...."
-             onChange={send}
-             value={message || ''}
+             onChange={(e)=>socket.emit("question",e.target.value)}
+             value={message}
              />
           </form>
       </header>
