@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/plasma-interview/static/css/main.fb3618ae.css",
+    "main.js": "/plasma-interview/static/js/main.edfeab51.js",
+    "static/media/cut.svg": "/plasma-interview/static/media/cut.e580d96e7a06bf635ef122f430db3936.svg",
+    "index.html": "/plasma-interview/index.html",
+    "static/media/call.svg": "/plasma-interview/static/media/call.999a47f777c66f57a695f00f8d6c015a.svg",
+    "static/media/run.svg": "/plasma-interview/static/media/run.fa53056a9f210614ce92ac3ff3156017.svg",
+    "static/media/copy.svg": "/plasma-interview/static/media/copy.0f900a25277a2228fc76e116d795d3e7.svg",
+    "main.fb3618ae.css.map": "/plasma-interview/static/css/main.fb3618ae.css.map",
+    "main.edfeab51.js.map": "/plasma-interview/static/js/main.edfeab51.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb3618ae.css",
+    "static/js/main.edfeab51.js"
+  ]
+}
