@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Coding-Interview-Platform/static/css/main.fb3618ae.css",
+    "main.js": "/Coding-Interview-Platform/static/js/main.0e7da948.js",
+    "static/media/cut.svg": "/Coding-Interview-Platform/static/media/cut.e580d96e7a06bf635ef122f430db3936.svg",
+    "index.html": "/Coding-Interview-Platform/index.html",
+    "static/media/call.svg": "/Coding-Interview-Platform/static/media/call.999a47f777c66f57a695f00f8d6c015a.svg",
+    "static/media/run.svg": "/Coding-Interview-Platform/static/media/run.fa53056a9f210614ce92ac3ff3156017.svg",
+    "static/media/copy.svg": "/Coding-Interview-Platform/static/media/copy.0f900a25277a2228fc76e116d795d3e7.svg",
+    "main.fb3618ae.css.map": "/Coding-Interview-Platform/static/css/main.fb3618ae.css.map",
+    "main.0e7da948.js.map": "/Coding-Interview-Platform/static/js/main.0e7da948.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb3618ae.css",
+    "static/js/main.0e7da948.js"
+  ]
+}
