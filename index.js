@@ -33,14 +33,14 @@ io.on("connection", (socket) => {
  
 //message exchange
 
-	// socket.on("send_message",(data)=>{
-	// 	io.emit("receive",data);
+	socket.on("send_message",(data)=>{
+		io.emit("receive",data);
 		
-	// })
-	// socket.on("question",(data)=> {
-	// 	io.emit("questionRe",data);
-	// 	console.log(data);
-	// });
+	})
+	socket.on("question",(data)=> {
+		io.emit("questionRe",data);
+		console.log(data);
+	});
 });
 
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
