@@ -13,7 +13,8 @@ export default class Compiler extends Component {
       user_input: ``,
       message:'',
     };
-    this.socket=io('http://localhost:5000');
+    this.socket=io('https://plasma-interview.onrender.com');
+    // this.socket=io('http://localhost:5000');
   }
 
   componentDidMount(){
