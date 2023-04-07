@@ -2,3 +2,4 @@ node_modules
 /clients/node_modules
 .vscode
 /build
+/clients/src/Qu.js

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './Compiler.css';
-import RunIcon from './run.svg';
-import io from "socket.io-client";
+import RunIcon from './run.svg'
 
 export default class Compiler extends Component {
   constructor(props) {
@@ -11,28 +10,12 @@ export default class Compiler extends Component {
       output: ``,
       language_id:localStorage.getItem('language_Id')|| 2,
       user_input: ``,
-      message:'',
     };
-    this.socket=io('https://plasma-interview.onrender.com');
-    // this.socket=io('http://localhost:5000');
   }
-
-  componentDidMount(){
-    this.socket.on("receive",(data)=>{
-        this.setState({input: data});
-    })
-  }
-
   input = (event) => { 
     event.preventDefault();
-    const e =event.target.value;
-    this.socket.emit("send_message",e);
-   
-
-
-
-    this.setState({ input: e });
-    localStorage.setItem('input', e) 
+    this.setState({ input: event.target.value });
+    localStorage.setItem('input', event.target.value) 
   };
   
   userInput = (event) => {
@@ -121,7 +104,6 @@ export default class Compiler extends Component {
               required
               name="solution"
               id="source"
-              placeholder="Code here"
               onChange={this.input}
               className=" source"
               value={this.state.input}

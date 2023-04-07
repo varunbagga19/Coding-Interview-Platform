@@ -1,7 +1,7 @@
 import {useState,useEffect} from "react";
 import io from "socket.io-client";
 import _ from 'lodash'
-// const socket=io.connect("http://localhost:5000");
+const socket=io.connect("http://localhost:5000");
 // const socket = io('https://plasma-interview.onrender.com');
 
 
