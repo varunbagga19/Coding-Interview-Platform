@@ -18,37 +18,22 @@ const ContextProvider = ({ children }) => {
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();
+
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
         setStream(currentStream);
-  
+
         myVideo.current.srcObject = currentStream;
-      })
-      .catch((error) => {
-        console.error('Error getting user media:', error);
       });
-  
-    navigator.mediaDevices.getDisplayMedia({ video: true, audio: true })
-      .then((screenStream) => {
-        const screenTrack = screenStream.getTracks()[0];
-        screenTrack.onended = () => {
-          stopScreenShare();
-        };
-  
-        setScreenStream(screenStream);
-      })
-      .catch((error) => {
-        console.error('Error getting screen media:', error);
-      });
-  
+
     socket.on('me', (id) => setMe(id));
-  
+
     socket.on('callUser', ({ from, name: callerName, signal }) => {
       setCall({ isReceivingCall: true, from, name: callerName, signal });
     });
   }, []);
-  
+
   const answerCall = () => {
     setCallAccepted(true);
 
