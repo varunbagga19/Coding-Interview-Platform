@@ -9,7 +9,7 @@ const io = require("socket.io")(server, {
 });
 
 app.use(cors());
-
+// 'https://plasma-interview.onrender.com'
 const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
@@ -33,15 +33,15 @@ io.on("connection", (socket) => {
  
 //message exchange
 
-	socket.on("question",(data)=> {
-		console.log(data);
-		io.emit("questionRe",data);
+	// socket.on("question",(data)=> {
+	// 	console.log(data);
+	// 	io.to(userToCall).emit("questionRe",data);
 		
-	});
-	socket.on("send_message",(data)=>{
-		io.emit("receive",data);
+	// });
+	// socket.on("send_message",(data)=>{
+	// 	io.to(userToCall).emit("receive",data);
 		
-	});
+	// });
 });
 
 server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
