@@ -1,7 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import {auth,Googleprovider,Gitprovider} from '../../firebase';
+import { BrowserRouter as Router, Route, Routes,Link} from 'react-router-dom';
 import { onAuthStateChanged , signOut} from 'firebase/auth';
-// import ExApp from '../../ExApp';
+import LogSignIn from './LogSignIn';
+import ExApp from '../../ExApp';
 const AuthDetails = () => {
     const [authUser,setAuthUser]=useState(null);
     useEffect(()=>{
@@ -21,10 +23,23 @@ const AuthDetails = () => {
             console.log('Signout');
         }).catch(error=>console.log(error))
     } 
-     return (
-    <div>{authUser?<><p>{`Signed in as ${authUser.email}`}</p><button onClick={usersignOut}>Sign out</button></>:<p> </p>}
-    </div>
-  )
-}
-
-export default AuthDetails
+    return (
+        <div>
+          <Router>
+            <Link to=""></Link>
+            {authUser ? (
+              <div>
+                <ExApp />
+                <button onClick={usersignOut}>Sign out</button>
+              </div>
+            ) : (
+              <Routes>
+                <Route index element={<LogSignIn />} />
+              </Routes>
+            )}
+          </Router>
+        </div>
+      );
+    };
+    
+    export default AuthDetails;
