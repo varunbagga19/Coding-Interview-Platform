@@ -4,11 +4,11 @@ import Options from './components/Options/Options';
 import Compiler from './components/Compiler/Compiler';
 import { ContextProvider } from './Context';
 // import Qu from './Qu.js';
-import './App.css';
-import './index.css'
+import './ExApp.css';
 function ExApp() {
   return (
     <ContextProvider>
+
     <div className='main'>
       <div className='left'>
         <VideoPlayer />
@@ -22,6 +22,7 @@ function ExApp() {
         <Compiler />
        </div>
     </div>
+
     </ContextProvider>
   );
 }

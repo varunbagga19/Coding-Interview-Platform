@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState,useEffect} from 'react';
-import './logsignIn.sass';
+import './logsignIn.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import {auth,provider,Gitprovider} from '../../firebase';
 import { ProviderId, createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup } from 'firebase/auth';
