@@ -4,6 +4,7 @@ import Options from './components/Options/Options';
 import Compiler from './components/Compiler/Compiler';
 import { ContextProvider } from './Context';
 // import Qu from './Qu.js';
+import './index.css';
 import './ExApp.css';
 function ExApp() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState,useEffect} from 'react';
-import './logsignIn.css';
+import style from './logsignIn.module.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import {auth,provider,Gitprovider} from '../../firebase';
 import { ProviderId, createUserWithEmailAndPassword,signInWithEmailAndPassword,signInWithPopup } from 'firebase/auth';
@@ -8,11 +8,11 @@ const LogSignIn = () => {
     //अवसर्पिणी
     const handleSignUp = () => {
         const container = document.getElementById('container');
-        container.classList.add('right-panel-active');
+        container.classList.add(style.rightPanelActive);
       };
       const handleSignIn = () => {
         const container = document.getElementById('container');
-        container.classList.remove('right-panel-active');
+        container.classList.remove(style.rightPanelActive);
       };
     
       //Agni mul vistar
@@ -63,78 +63,80 @@ const LogSignIn = () => {
 
 
       return (
-    <div><h2>Welcome To Plasma Interview</h2>
-        <div className="container" id="container">
-        <div className="form-container sign-up-container">
-            <form onSubmit={signup}>
-                <h1>Create Account</h1>
-                <div className="social-container">
-                    <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                    <a href="#" className="social"><i className="fab fa-github"></i></a>
-                    <a href="#" className="social"><i className="fab fa-google"></i></a>
+        <div className={style.body}>
+    <div><h2 className={style.h2}>Welcome To Plasma Interview</h2>
+        <div className={style.container} id="container">
+        <div className={`${style.formContainer} ${style.signUpContainer}`}>
+        <form className={style.form} onSubmit={signup}>
+                <h1 className={style.h1} >Create Account</h1>
+                <div className={style.socialContainer}>
+                    <a className={`${style.a} ${style.social}`}href="#"><i className="fab fa-google-plus-g"></i></a>
+                    <a className={`${style.a} ${style.social}`}href="#"><i className="fab fa-github"></i></a>
+                    <a className={`${style.a} ${style.social}`}href="#"><i className="fab fa-google"></i></a>
                 </div>
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" name="email" placeholder='Enter your mail' 
+                <span className={style.span}>or use your email for registration</span>
+                <input className={style.input} type="text" placeholder="Name" />
+                <input className={style.input} type="email" name="email" placeholder='Enter your mail' 
                          value={email}
                           onChange={(e)=>setEmail(e.target.value)}
                                   />  
-                             <input type="password" name="password" placeholder='Enter your password' 
+                             <input className={style.input} type="password" name="password" placeholder='Enter your password' 
                              value={password}
                           onChange={(e)=>setpassword(e.target.value)}
                                   />
-                                  <p>{uperror}</p>
-                         <button type="submit" > Signup </button>
+                                  <p className={style.p}>{uperror}</p>
+                         <button className={style.button} type="submit" > Signup </button>
                      </form>
         </div>
-        <div className="form-container sign-in-container">
-            <form onSubmit={signIn}>
-                <h1>Sign in</h1>
-                <div className="social-container">
+        <div className={`${style.formContainer} ${style.signInContainer}`}>
+         <form className={style.form} onSubmit={signIn}>
+                <h1 className={style.h1}>Sign in</h1>
+                <div className={style.socialContainer}>
                 {gvalue ?(
-                           <a onClick={signInwithgoogle} className="social">
+                           <a className={`${style.a} ${style.social}`} onClick={signInwithgoogle} >
                              <i className="fab fa-google-plus-g"></i>
                            </a>):(
-                             <p>{gerror}</p>
+                             <p className={style.p}>{gerror}</p>
                          ) }
                         
-                    <a href="#" className="social"><i className="fab fa-github"></i></a>
-                    <a href="#" className="social"><i className="fab fa-google"></i></a>
+                    <a className={`${style.a} ${style.social}`}href="#" ><i className="fab fa-google"></i></a>
+                    <a className={`${style.a} ${style.social}`}href="#" ><i className="fab fa-github"></i></a>
                 </div>
-                <span>or use your account</span>
-                <input type="email" name="email" placeholder='Enter your mail' 
+                <span className={style.span}>or use your account</span>
+                <input className={style.input} type="email" name="email" placeholder='Enter your mail' 
                          value={email}
                          onChange={(e)=>setEmail(e.target.value)}
                      />
-                   <input type="password" name="password" placeholder='Enter your password' 
+                   <input className={style.input} type="password" name="password" placeholder='Enter your password' 
                                value={password}
                                   onChange={(e)=>setpassword(e.target.value)}
-                                  /><a href="#">Forgot your password?</a>
-                               <button type="submit" >Login In</button>
+                                  /><a className={style.a} href="#">Forgot your password?</a>
+                               <button className={style.button} type="submit" >Login In</button>
                                <div>{ error}</div>
               </form>
         </div>
-        <div className="overlay-container">
-            <div className="overlay">
-                <div className="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button className="ghost" id="signIn" onClick={handleSignIn} >Sign In</button>
+        <div className={style.overlayContainer}>
+            <div className={style.overlay}>
+            <div className={`${style.overlayPanel} ${style.overlayLeft}`}>
+        <h1 className={style.h1}>Welcome Back!</h1>
+                    <p className={style.p}>To keep connected with us please login with your personal info</p>
+                    <button className={style.button} id="signIn" onClick={handleSignIn} >Sign In</button>
                 </div>
-                <div className="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button className="ghost" id="signUp" onClick={handleSignUp} >Sign Up</button>
+                <div className={`${style.overlayPanel} ${style.overlayRight}`}>
+            <h1 className={style.h1}>Hello, Friend!</h1>
+                    <p className={style.p}>Enter your personal details and start journey with us</p>
+                    <button className={style.button}  id="signUp" onClick={handleSignUp} >Sign Up</button>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>
+        <p className={style.p}>
          Copyright &copy; { new Date().getFullYear()}  Created with <i className="fa fa-heart" />  by IPECians
         </p>
     </footer></div>
+    </div>
   )
 }
 
