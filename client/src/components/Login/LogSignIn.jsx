@@ -120,12 +120,12 @@ const LogSignIn = () => {
             <div className={`${style.overlayPanel} ${style.overlayLeft}`}>
         <h1 className={style.h1}>Welcome Back!</h1>
                     <p className={style.p}>To keep connected with us please login with your personal info</p>
-                    <button className={style.button} id="signIn" onClick={handleSignIn} >Sign In</button>
+                    <button className={`${style.button} ${style.ghost}`} id="signIn" onClick={handleSignIn} >Sign In</button>
                 </div>
                 <div className={`${style.overlayPanel} ${style.overlayRight}`}>
             <h1 className={style.h1}>Hello, Friend!</h1>
                     <p className={style.p}>Enter your personal details and start journey with us</p>
-                    <button className={style.button}  id="signUp" onClick={handleSignUp} >Sign Up</button>
+                    <button className={`${style.button} ${style.ghost}`}  id="signUp" onClick={handleSignUp} >Sign Up</button>
                 </div>
             </div>
         </div>
