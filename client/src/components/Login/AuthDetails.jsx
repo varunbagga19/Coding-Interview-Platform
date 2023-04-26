@@ -3,6 +3,7 @@ import {auth,Googleprovider,Gitprovider} from '../../firebase';
 import { BrowserRouter as Router, Route, Routes,Link} from 'react-router-dom';
 import { onAuthStateChanged , signOut} from 'firebase/auth';
 import LogSignIn from './LogSignIn';
+import expa from './logsignIn.module.css';
 import ExApp from '../../ExApp';
 const AuthDetails = () => {
     const [authUser,setAuthUser]=useState(null);
@@ -30,7 +31,7 @@ const AuthDetails = () => {
             {authUser ? (
               <div>
                 {`Signed with ${authUser.email}`}
-              <p style={{float:'right'}}>  <button onClick={usersignOut}>Sign out</button></p>  
+              <p style={{float:'right'}}>  <button className={expa.button} onClick={usersignOut}>Sign out</button></p>  
                 <ExApp />
               
               </div>
