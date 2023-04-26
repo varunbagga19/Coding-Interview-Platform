@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './Compiler.css';
-import RunIcon from './run.svg'
-
+import RunIcon from './run.svg';
+import comp from '../../ExApp.module.css';
 export default class Compiler extends Component {
   constructor(props) {
     super(props);
@@ -133,15 +133,14 @@ export default class Compiler extends Component {
           <option value="62">Java</option>
           <option value="71">Python</option>
         </select>
-        <button
+        <button 
               type="submit"
-              className="btn btn-danger ml-2 mr-2 "
+              className={`${comp.button} ${"btn btn-danger ml-2 mr-2"}` }   
               onClick={this.submit}
             >
               <i className="fas fa-cog fa-fw"></i>
               <img src={RunIcon} alt='Run'/>
         </button>
-        
         </div>
       </div>
     );

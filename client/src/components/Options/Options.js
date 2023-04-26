@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { SocketContext } from '../../Context'
-import ex from '../../ExApp.module.css';
+import exa from '../../ExApp.module.css';
 import './Options.css'
 
 import CallIcon from './call.svg'
@@ -25,23 +25,23 @@ const Options = ({ children }) => {
   return (
     <div className='optionsContainer'>
         <div>
-            <input className={ex.input} type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name'/>
+            <input className={exa.input} type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name'/>
             <CopyToClipboard text={me}>
-              <button>
+              <button className={exa.button}>
                 <img src={CopyIcon} alt='Copy ID'/>
               </button>
             </CopyToClipboard>
         </div>
         <div>
-            <input className={ex.input} type='text' value={idToCall} onChange={(e) => setIdToCall(e.target.value)} placeholder='ID to Call'/>
+            <input className={exa.input} type='text' value={idToCall} onChange={(e) => setIdToCall(e.target.value)} placeholder='ID to Call'/>
           { callAccepted && !callEnded ? (
-            <button 
+            <button className={exa.button}
               onClick={leaveCall}
             >
               <img src={EndCallIcon} alt='Hang Up'/>
             </button>
             ) : (
-            <button
+            <button className={exa.button}
               onClick={() => callUser(idToCall)}
             >
               <img src={CallIcon} alt='Call'/>
