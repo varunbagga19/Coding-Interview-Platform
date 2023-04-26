@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 import { SocketContext } from '../../Context'
-
+import ex from '../../ExApp.module.css';
 import './Options.css'
 
 import CallIcon from './call.svg'
@@ -25,7 +25,7 @@ const Options = ({ children }) => {
   return (
     <div className='optionsContainer'>
         <div>
-            <input type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name'/>
+            <input className={ex.input} type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name'/>
             <CopyToClipboard text={me}>
               <button>
                 <img src={CopyIcon} alt='Copy ID'/>
@@ -33,9 +33,9 @@ const Options = ({ children }) => {
             </CopyToClipboard>
         </div>
         <div>
-            <input type='text' value={idToCall} onChange={(e) => setIdToCall(e.target.value)} placeholder='ID to Call'/>
+            <input className={ex.input} type='text' value={idToCall} onChange={(e) => setIdToCall(e.target.value)} placeholder='ID to Call'/>
           { callAccepted && !callEnded ? (
-            <button
+            <button 
               onClick={leaveCall}
             >
               <img src={EndCallIcon} alt='Hang Up'/>
