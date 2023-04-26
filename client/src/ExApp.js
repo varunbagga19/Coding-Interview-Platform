@@ -4,20 +4,19 @@ import Options from './components/Options/Options';
 import Compiler from './components/Compiler/Compiler';
 import { ContextProvider } from './Context';
 // import Qu from './Qu.js';
-import './index.css';
-import './ExApp.css';
+import ex from './ExApp.module.css';
 function ExApp() {
   return (
-    <ContextProvider>
-
-    <div className='main'>
-      <div className='left'>
+    <div className={ex.body}>
+    <ContextProvider >
+    <div className={ex.main}>
+      <div className={ex.left}>
         <VideoPlayer />
-        <Options>
-          <Notifications />
+        <Options className={ex.button}>
+          <Notifications  />
         </Options>
       </div>
-      <div className='right'> 
+      <div className={ex.right}> 
     
       {/* <Qu />    */}
         <Compiler />
@@ -25,6 +24,7 @@ function ExApp() {
     </div>
 
     </ContextProvider>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import {auth,Googleprovider,Gitprovider} from '../../firebase';
 import { BrowserRouter as Router, Route, Routes,Link} from 'react-router-dom';
 import { onAuthStateChanged , signOut} from 'firebase/auth';
 import LogSignIn from './LogSignIn';
-// import ExApp from '../../ExApp';
+import ExApp from '../../ExApp';
 const AuthDetails = () => {
     const [authUser,setAuthUser]=useState(null);
     useEffect(()=>{
@@ -31,7 +31,7 @@ const AuthDetails = () => {
               <div>
                 {`Signed with ${authUser.email}`}
               <p style={{float:'right'}}>  <button onClick={usersignOut}>Sign out</button></p>  
-                {/* <ExApp /> */}
+                <ExApp />
               
               </div>
             ) : (
