@@ -41,6 +41,7 @@ const AuthDetails = () => {
               </Routes>
             )}
           </Router>
+    {/* <ExApp/> */}
         </div>
       );
     };
